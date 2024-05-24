@@ -1,0 +1,12 @@
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+    <h2>Login</h2>
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success ml-2" type="submit">Kirish</button>
+        <a class="btn btn-outline-danger" href="{% url 'password_reset'  %}" role="button">Kodni yangilash </a>
+    </form>
+
+{% endblock content %}
