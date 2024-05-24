@@ -1,0 +1,20 @@
+
+
+{% block title %}Quiz app{% endblock title %}
+
+{% block content %}
+    <br/>
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome!</h1>
+        <p class="lead">Tis is Quiz app.</p>
+        <hr class="my-4">
+        <p>Here you can see quizzses .</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'exam_list' %}" role="button">Imtixonlar ro'yhati</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'exam_create' %}" role="button">Imtixon qo'shish</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">Ro'yhatdan o'tish</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-light">Kirish</a>
+        </p>
+    </div>
+{% endblock content %}
+

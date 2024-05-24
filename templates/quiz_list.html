@@ -1,0 +1,20 @@
+
+{% block content %}
+  <h2>Quizzes for Exam {{ exam_id }}</h2>
+  <ul>
+    {% for quiz in object_list %}
+      <li>{{ quiz.question }}</li>
+      <ul>
+        <li>Option 1: {{ quiz.option1 }}</li>
+        <li>Option 2: {{ quiz.option2 }}</li>
+        <li>Option 3: {{ quiz.option3 }}</li>
+        <li>Option 4: {{ quiz.option4 }}</li>
+        <li>Correct Option: {{ quiz.correct_option }}</li>
+        <a href="{% url 'quiz_update' pk=quiz.pk %}">Edit</a>
+      </ul>
+      <hr>
+    {% empty %}
+      <p>No quizzes found for this exam.</p>
+    {% endfor %}
+  </ul>
+{% endblock %}

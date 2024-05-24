@@ -1,0 +1,45 @@
+
+{% block content %}
+  <h2>Create Quizzes for Exam</h2>
+  <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="exam" value="{{ exam.id }}">
+    {% for i in  "1" %}
+      <h3>Quiz {{ i}}</h3>
+      <label for="id_question_{{ i }}">Question :</label>
+      <input type="text" id="id_question_{{ i }}" name="question_{{ i }}" required>
+      <br>
+
+      <label for="id_option1_{{ i }}">Option 1:</label>
+      <input type="text" id="id_option1_{{ i }}" name="option1_{{ i }}" required>
+      <br>
+
+      <label for="id_option2_{{ i }}">Option 2:</label>
+      <input type="text" id="id_option2_{{ i }}" name="option2_{{ i }}" required>
+      <br>
+
+      <label for="id_option3_{{ i }}">Option 3:</label>
+      <input type="text" id="id_option3_{{ i }}" name="option3_{{ i }}" required>
+      <br>
+
+      <label for="id_option4_{{ i }}">Option 4:</label>
+      <input type="text" id="id_option4_{{ i }}" name="option4_{{ i }}" required>
+      <br>
+
+      <label for="id_correct_option_{{ i }}">Correct Option:</label>
+      <select id="id_correct_option_{{ i }}" name="correct_option_{{ i }}" required>
+
+        <option value="option1">Option 1</option><br>
+
+        <option value="option2">Option 2</option><br>
+
+        <option value="option3">Option 3</option><br>
+
+        <option value="option4">Option 4</option><br>
+
+      </select>
+      <hr>
+    {% endfor %}
+    <button type="submit">Save Quizz</button>
+  </form>
+{% endblock %}

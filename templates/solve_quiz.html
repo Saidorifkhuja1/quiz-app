@@ -1,0 +1,13 @@
+<h2>Solve Quizzes for {{ exam.title }}</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {% for quiz in quizzes %}
+    <h3>{{ quiz.question }}</h3>
+    <input type="radio" name="{{ quiz.id }}" value="option1"> {{ quiz.option1 }}<br>
+    <input type="radio" name="{{ quiz.id }}" value="option2"> {{ quiz.option2 }}<br>
+    <input type="radio" name="{{ quiz.id }}" value="option3"> {{ quiz.option3 }}<br>
+    <input type="radio" name="{{ quiz.id }}" value="option4"> {{ quiz.option4 }}<br>
+  {% endfor %}
+  <button type="submit">Submit</button>
+</form>

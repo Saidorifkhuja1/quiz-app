@@ -1,0 +1,22 @@
+
+
+{% block title %}Exam List{% endblock %}
+
+{% block content %}
+    <h2>Exam List</h2>
+    <ul>
+        {% for exam in exams %}
+
+            <a href="{% url 'exam_detail' pk=exam.pk %}" class="btn btn-outline-light"> <strong>{{ exam.title }}</strong><br> </a><br>
+            <br>
+        {% empty %}
+            <li>No exams available.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
+
+
+

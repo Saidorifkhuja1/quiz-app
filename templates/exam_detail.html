@@ -1,0 +1,25 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Detail</title>
+</head>
+<body>
+    <h2>Exam Detail</h2>
+    <ul>
+        <li><strong>Title:</strong> {{ object.title }}</li>
+        <li><strong>Description:</strong> {{ object.description }}</li>
+        <li><strong>Start Date:</strong> {{ object.start_date }}</li>
+        <li><strong>End Date:</strong> {{ object.end_date }}</li>
+        <li><strong>Time Limit (Minutes):</strong> {{ object.time_limit_minutes }}</li>
+    </ul>
+
+    <a href="{% url 'exam_list' %}">Back to Exam List</a><br>
+    <a href="{% url 'quiz_list' exam_id=exam.id %}">Quiz list</a><br>
+    <a href="{% url 'quiz_solve' exam_id=exam.id %}">Solve Quizzes</a>
+    <a href="{% url 'quiz_create' exam_id=exam.id %}?num_quizzes=1">Create Quiz</a><br>
+
+</body>
+</html>
