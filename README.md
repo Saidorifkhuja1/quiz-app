@@ -1,1 +1,1 @@
-App for using and creating projects
+* App for using and creating projects
